@@ -139,6 +139,7 @@ contract Voting {
      * @return uint
      */
     function winnerCandidate() public view returns (uint) {
+        require(!isOpen);
         uint winner = 0;  //TODO 
         for(uint i=0;i < candidateVotes.length;i++){
             if(candidateVotes[i] > candidateVotes[winner]){
